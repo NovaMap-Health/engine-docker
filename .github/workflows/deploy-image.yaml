@@ -48,5 +48,5 @@ jobs:
 
           for tag in $(docker image ls openintegrationengine/engine --format '{{.Tag}}' | grep -v '<none>'); do
             docker tag openintegrationengine/engine:$tag $image_lower:$tag
-            docker push $repo_lower:$tag
+            docker push $image_lower:$tag
           done
