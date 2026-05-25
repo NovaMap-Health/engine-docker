@@ -43,9 +43,10 @@ jobs:
         env:
           TARGET_IMAGE: ghcr.io/${{ github.repository }}
         run: |
+          image_lower="${TARGET_IMAGE,,}"
           repo_lower="${GITHUB_REPOSITORY,,}"
 
           for tag in $(docker image ls openintegrationengine/engine --format '{{.Tag}}' | grep -v '<none>'); do
-            docker tag openintegrationengine/engine:$tag $TARGET_IMAGE:$tag
+            docker tag openintegrationengine/engine:$tag $image_lower:$tag
             docker push $repo_lower:$tag
           done
