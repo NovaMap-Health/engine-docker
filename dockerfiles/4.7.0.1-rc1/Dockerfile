@@ -27,7 +27,7 @@ WORKDIR /opt/engine
 COPY --chmod=755 entrypoint.sh /opt/engine/entrypoint.sh
 
 RUN rm -rf cli-lib manager-lib \
-    && rm mirth-cli-launcher.jar oiecommand
+    && rm mirth-cli-launcher.jar oie-novacommand
 FROM eclipse-temurin:21.0.11_10-jre-resolute AS ubuntu-jre
 
 ARG CREATED_AT

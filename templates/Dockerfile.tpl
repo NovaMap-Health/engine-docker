@@ -42,7 +42,7 @@ WORKDIR /opt/engine
 COPY --chmod=755 entrypoint.sh /opt/engine/entrypoint.sh
 
 RUN rm -rf cli-lib manager-lib \
-    && rm mirth-cli-launcher.jar oiecommand
+    && rm mirth-cli-launcher.jar oie-novacommand
 
 {{- /* Assign current version slug into a variable to carry it into the tags iteration */}}
 {{- $slug := dict "slug" .version.slug -}}
