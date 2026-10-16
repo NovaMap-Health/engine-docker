@@ -60,7 +60,7 @@ EXPOSE 8443
 USER engine
 
 ENTRYPOINT ["./entrypoint.sh"]
-CMD ["./oieserver"]
+CMD ["./oie-novaserver"]
 
 FROM eclipse-temurin:21.0.11_10-jdk-resolute AS ubuntu-jdk
 
@@ -94,7 +94,7 @@ EXPOSE 8443
 USER engine
 
 ENTRYPOINT ["./entrypoint.sh"]
-CMD ["./oieserver"]
+CMD ["./oie-novaserver"]
 
 FROM eclipse-temurin:21.0.11_10-jre-alpine AS alpine-jre
 
@@ -124,7 +124,7 @@ EXPOSE 8443
 USER engine
 
 ENTRYPOINT ["./entrypoint.sh"]
-CMD ["./oieserver"]
+CMD ["./oie-novaserver"]
 
 FROM eclipse-temurin:21.0.11_10-jdk-alpine AS alpine-jdk
 
@@ -154,4 +154,4 @@ EXPOSE 8443
 USER engine
 
 ENTRYPOINT ["./entrypoint.sh"]
-CMD ["./oieserver"]
+CMD ["./oie-novaserver"]

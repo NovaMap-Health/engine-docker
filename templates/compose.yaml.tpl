@@ -16,7 +16,7 @@
 #                                                              #
 ################################################################
 
-name: open-integration-engine
+name: open-integration-engine-novamap
 
 {{/* Assign current version slug into a variable to carry it into the tags iteration */}}
 {{- $slug := .version.slug -}}
