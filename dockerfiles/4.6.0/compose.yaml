@@ -4,11 +4,11 @@
 #                                                              #
 ################################################################
 
-name: open-integration-engine
+name: open-integration-engine-novamap
 
 services:
     ubuntu-jre:
-      image: brightcodecompany/openintegrationengine
+      image: ghcr.io/novamap-health/engine
       build:
         target: ubuntu-jre
         context: .
@@ -16,13 +16,13 @@ services:
           - linux/amd64
           - linux/arm64
         tags:
-          - brightcodecompany/openintegrationengine:4.6.0-ubuntu
-          - brightcodecompany/openintegrationengine:4.6.0-ubuntu-jre
-          - brightcodecompany/openintegrationengine:latest-ubuntu-jre
-          - brightcodecompany/openintegrationengine:latest-ubuntu
+          - ghcr.io/novamap-health/engine:4.6.0-ubuntu
+          - ghcr.io/novamap-health/engine:4.6.0-ubuntu-jre
+          - ghcr.io/novamap-health/engine:latest-ubuntu-jre
+          - ghcr.io/novamap-health/engine:latest-ubuntu
   
     ubuntu-jdk:
-      image: brightcodecompany/openintegrationengine
+      image: ghcr.io/novamap-health/engine
       build:
         target: ubuntu-jdk
         context: .
@@ -30,12 +30,12 @@ services:
           - linux/amd64
           - linux/arm64
         tags:
-          - brightcodecompany/openintegrationengine:4.6.0-ubuntu
-          - brightcodecompany/openintegrationengine:4.6.0-ubuntu-jdk
-          - brightcodecompany/openintegrationengine:latest-ubuntu-jdk
+          - ghcr.io/novamap-health/engine:4.6.0-ubuntu
+          - ghcr.io/novamap-health/engine:4.6.0-ubuntu-jdk
+          - ghcr.io/novamap-health/engine:latest-ubuntu-jdk
   
     alpine-jre:
-      image: brightcodecompany/openintegrationengine
+      image: ghcr.io/novamap-health/engine
       build:
         target: alpine-jre
         context: .
@@ -43,14 +43,14 @@ services:
           - linux/amd64
           - linux/arm64
         tags:
-          - brightcodecompany/openintegrationengine:4.6.0-alpine
-          - brightcodecompany/openintegrationengine:4.6.0-alpine-jre
-          - brightcodecompany/openintegrationengine:latest-alpine-jre
-          - brightcodecompany/openintegrationengine:latest-alpine
-          - brightcodecompany/openintegrationengine:latest
+          - ghcr.io/novamap-health/engine:4.6.0-alpine
+          - ghcr.io/novamap-health/engine:4.6.0-alpine-jre
+          - ghcr.io/novamap-health/engine:latest-alpine-jre
+          - ghcr.io/novamap-health/engine:latest-alpine
+          - ghcr.io/novamap-health/engine:latest
   
     alpine-jdk:
-      image: brightcodecompany/openintegrationengine
+      image: ghcr.io/novamap-health/engine
       build:
         target: alpine-jdk
         context: .
@@ -58,7 +58,6 @@ services:
           - linux/amd64
           - linux/arm64
         tags:
-          - brightcodecompany/openintegrationengine:4.6.0-alpine
-          - brightcodecompany/openintegrationengine:4.6.0-alpine-jdk
-          - brightcodecompany/openintegrationengine:latest-alpine-jdk
-  
+          - ghcr.io/novamap-health/engine:4.6.0-alpine
+          - ghcr.io/novamap-health/engine:4.6.0-alpine-jdk
+          - ghcr.io/novamap-health/engine:latest-alpine-jdk
