@@ -8,7 +8,7 @@ name: open-integration-engine
 
 services:
     ubuntu-jre:
-      image: brightcodecompany/openintegrationengine
+      image: ghcr.io/novamap-health/engine
       build:
         target: ubuntu-jre
         context: .
@@ -16,11 +16,11 @@ services:
           - linux/amd64
           - linux/arm64
         tags:
-          - brightcodecompany/openintegrationengine:4.5.2-ubuntu
-          - brightcodecompany/openintegrationengine:4.5.2-ubuntu-jre
+          - ghcr.io/novamap-health/engine:4.7.0.1-rc1-ubuntu
+          - ghcr.io/novamap-health/engine:4.7.0.1-rc1-ubuntu-jre
   
     ubuntu-jdk:
-      image: brightcodecompany/openintegrationengine
+      image: ghcr.io/novamap-health/engine
       build:
         target: ubuntu-jdk
         context: .
@@ -28,11 +28,11 @@ services:
           - linux/amd64
           - linux/arm64
         tags:
-          - brightcodecompany/openintegrationengine:4.5.2-ubuntu
-          - brightcodecompany/openintegrationengine:4.5.2-ubuntu-jdk
+          - ghcr.io/novamap-health/engine:4.7.0.1-rc1-ubuntu
+          - ghcr.io/novamap-health/engine:4.7.0.1-rc1-ubuntu-jdk
   
     alpine-jre:
-      image: brightcodecompany/openintegrationengine
+      image: ghcr.io/novamap-health/engine
       build:
         target: alpine-jre
         context: .
@@ -40,11 +40,11 @@ services:
           - linux/amd64
           - linux/arm64
         tags:
-          - brightcodecompany/openintegrationengine:4.5.2-alpine
-          - brightcodecompany/openintegrationengine:4.5.2-alpine-jre
+          - ghcr.io/novamap-health/engine:4.7.0.1-rc1-alpine
+          - ghcr.io/novamap-health/engine:4.7.0.1-rc1-alpine-jre
   
     alpine-jdk:
-      image: brightcodecompany/openintegrationengine
+      image: ghcr.io/novamap-health/engine
       build:
         target: alpine-jdk
         context: .
@@ -52,6 +52,6 @@ services:
           - linux/amd64
           - linux/arm64
         tags:
-          - brightcodecompany/openintegrationengine:4.5.2-alpine
-          - brightcodecompany/openintegrationengine:4.5.2-alpine-jdk
+          - ghcr.io/novamap-health/engine:4.7.0.1-rc1-alpine
+          - ghcr.io/novamap-health/engine:4.7.0.1-rc1-alpine-jdk
   

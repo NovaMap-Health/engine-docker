@@ -23,7 +23,7 @@ name: open-integration-engine
 services:
   {{- range .version.tags }}
     {{ print .distro "-" .type ":" }}
-      image: brightcodecompany/openintegrationengine
+      image: ghcr.io/novamap-health/engine
       build:
         target: {{ .distro }}-{{ .type }}
         context: .
@@ -31,14 +31,14 @@ services:
           - linux/amd64
           - linux/arm64
         tags:
-          - brightcodecompany/openintegrationengine:{{ $slug }}-{{ .distro }}
-          - brightcodecompany/openintegrationengine:{{ $slug }}-{{ .distro }}-{{ .type }}
+          - ghcr.io/novamap-health/engine:{{ $slug }}-{{ .distro }}
+          - ghcr.io/novamap-health/engine:{{ $slug }}-{{ .distro }}-{{ .type }}
           {{- if eq $slug $.latest }}
-          - brightcodecompany/openintegrationengine:latest-{{ .distro }}-{{ .type }}
+          - ghcr.io/novamap-health/engine:latest-{{ .distro }}-{{ .type }}
             {{- if eq .type "jre" }}
-          - brightcodecompany/openintegrationengine:latest-{{ .distro }}
+          - ghcr.io/novamap-health/engine:latest-{{ .distro }}
               {{- if eq .distro "alpine" }}
-          - brightcodecompany/openintegrationengine:latest
+          - ghcr.io/novamap-health/engine:latest
               {{- end }}
             {{- end }}
           {{- end }}

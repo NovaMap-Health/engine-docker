@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Check for duplicate slugs
         working-directory: deploy
@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: Cache gomplate binary
         id: cache
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: ${{ env.GOMPLATE_DIR }}
           key: |
@@ -57,7 +57,7 @@ jobs:
       - get-gomplate
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Render Dockerfiles
         run: ./render_docker_templates.sh

@@ -9,54 +9,20 @@ gid: 1000
 
 # Add OCI best-practice labels https://github.com/opencontainers/image-spec/blob/main/annotations.md#pre-defined-annotation-keys
 labels: |-
-  "org.opencontainers.image.authors"="BrightCodeCompany OÜ" \
+  "org.opencontainers.image.authors"="NovaMap Health" \
   "org.opencontainers.image.created"="${CREATED_AT?:}" \
-  "org.opencontainers.image.description"="An open source fork of the now closed-source Mirth Connect" \
+  "org.opencontainers.image.description"="An open source fork of the now closed-source Mirth Connect." \
   "org.opencontainers.image.licenses"="MPL-2.0" \
-  "org.opencontainers.image.source"="https://github.com/brightcodecompany/engine-docker" \
-  "org.opencontainers.image.title"="Open Integration Engine" \
-  "org.opencontainers.image.url"="https://github.com/OpenIntegrationEngine/engine" \
-  "org.opencontainers.image.vendor"="BrightCodeCompany OÜ" \
+  "org.opencontainers.image.source"="https://github.com/NovaMap-Health/engine-docker" \
+  "org.opencontainers.image.title"="Eclipse Open Integration Engine - NovaMap Edition" \
+  "org.opencontainers.image.url"="https://github.com/NovaMap-Health/engine" \
+  "org.opencontainers.image.vendor"="NovaMap Health" \
   "org.opencontainers.image.version"="{{ .slug }}"
 
 versions:
-  - slug: 4.6.0
-    releaseVersion: 4.6.0
-    releaseUrl: https://github.com/OpenIntegrationEngine/engine/releases/download/v4.6.0/oie_unix_4_6_0.tar.gz
-    tags:
-      - distro: ubuntu
-        type: jre
-        tag: 21.0.11_10-jre-resolute
-      - distro: ubuntu
-        type: jdk
-        tag: 21.0.11_10-jdk-resolute
-      - distro: alpine
-        type: jre
-        tag: 21.0.11_10-jre-alpine
-      - distro: alpine
-        type: jdk
-        tag: 21.0.11_10-jdk-alpine
-
-  - slug: 4.6.0-rc1
-    releaseVersion: 4.6.0-rc1
-    releaseUrl: https://github.com/OpenIntegrationEngine/engine/releases/download/v4.6.0-rc1/oie_unix_4_6_0-rc1.tar.gz
-    tags:
-      - distro: ubuntu
-        type: jre
-        tag: 21.0.11_10-jre-resolute
-      - distro: ubuntu
-        type: jdk
-        tag: 21.0.11_10-jdk-resolute
-      - distro: alpine
-        type: jre
-        tag: 21.0.11_10-jre-alpine
-      - distro: alpine
-        type: jdk
-        tag: 21.0.11_10-jdk-alpine
-
-  - slug: 4.5.2
-    releaseVersion: 4.5.2
-    releaseUrl: https://github.com/OpenIntegrationEngine/engine/releases/download/v4.5.2/oie_unix_4_5_2.tar.gz
+  - slug: 4.7.0.1-rc1
+    releaseVersion: 4.7.0.1-rc1
+    releaseUrl: https://github.com/NovaMap-Health/engine/releases/download/v4.7.0.1-rc1/oie-nova_unix_4_7_0_1-rc1.tar.gz
     tags:
       - distro: ubuntu
         type: jre

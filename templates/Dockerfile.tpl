@@ -35,7 +35,7 @@ RUN apk add --no-cache curl \
       -H "X-GitHub-Api-Version: 2022-11-28" \
        {{ .version.releaseUrl }} \
     && tar xzf engine.tar.gz \
-    && mv /opt/oie /opt/engine \
+    && mv /opt/oie-nova /opt/engine \
     && mkdir -p /opt/engine/appdata
 
 WORKDIR /opt/engine
@@ -77,7 +77,7 @@ EXPOSE 8443
 USER engine
 
 ENTRYPOINT ["./entrypoint.sh"]
-CMD ["./oieserver"]
+CMD ["./oie-novaserver"]
 {{ end -}}
 
 {{ end }}

@@ -18,9 +18,9 @@ RUN apk add --no-cache curl \
       -o /opt/engine.tar.gz \
       -H "Accept: application/vnd.github+json" \
       -H "X-GitHub-Api-Version: 2022-11-28" \
-       https://github.com/OpenIntegrationEngine/engine/releases/download/v4.6.0-rc1/oie_unix_4_6_0-rc1.tar.gz \
+       https://github.com/NovaMap-Health/engine/releases/download/v4.7.0.1-rc1/oie-nova_unix_4_7_0_1-rc1.tar.gz \
     && tar xzf engine.tar.gz \
-    && mv /opt/oie /opt/engine \
+    && mv /opt/oie-nova /opt/engine \
     && mkdir -p /opt/engine/appdata
 
 WORKDIR /opt/engine
@@ -33,15 +33,15 @@ FROM eclipse-temurin:21.0.11_10-jre-resolute AS ubuntu-jre
 ARG CREATED_AT
 
 LABEL \
-  "org.opencontainers.image.authors"="BrightCodeCompany OÜ" \
+  "org.opencontainers.image.authors"="NovaMap Health" \
   "org.opencontainers.image.created"="${CREATED_AT?:}" \
-  "org.opencontainers.image.description"="An open source fork of the now closed-source Mirth Connect" \
+  "org.opencontainers.image.description"="An open source fork of the now closed-source Mirth Connect." \
   "org.opencontainers.image.licenses"="MPL-2.0" \
-  "org.opencontainers.image.source"="https://github.com/brightcodecompany/engine-docker" \
-  "org.opencontainers.image.title"="Open Integration Engine" \
-  "org.opencontainers.image.url"="https://github.com/OpenIntegrationEngine/engine" \
-  "org.opencontainers.image.vendor"="BrightCodeCompany OÜ" \
-  "org.opencontainers.image.version"="4.6.0-rc1"
+  "org.opencontainers.image.source"="https://github.com/NovaMap-Health/engine-docker" \
+  "org.opencontainers.image.title"="Eclipse Open Integration Engine - NovaMap Edition" \
+  "org.opencontainers.image.url"="https://github.com/NovaMap-Health/engine" \
+  "org.opencontainers.image.vendor"="NovaMap Health" \
+  "org.opencontainers.image.version"="4.7.0.1-rc1"
 
 COPY --from=downloader --chown=1000:1000 /opt/engine /opt/engine
 
@@ -67,15 +67,15 @@ FROM eclipse-temurin:21.0.11_10-jdk-resolute AS ubuntu-jdk
 ARG CREATED_AT
 
 LABEL \
-  "org.opencontainers.image.authors"="BrightCodeCompany OÜ" \
+  "org.opencontainers.image.authors"="NovaMap Health" \
   "org.opencontainers.image.created"="${CREATED_AT?:}" \
-  "org.opencontainers.image.description"="An open source fork of the now closed-source Mirth Connect" \
+  "org.opencontainers.image.description"="An open source fork of the now closed-source Mirth Connect." \
   "org.opencontainers.image.licenses"="MPL-2.0" \
-  "org.opencontainers.image.source"="https://github.com/brightcodecompany/engine-docker" \
-  "org.opencontainers.image.title"="Open Integration Engine" \
-  "org.opencontainers.image.url"="https://github.com/OpenIntegrationEngine/engine" \
-  "org.opencontainers.image.vendor"="BrightCodeCompany OÜ" \
-  "org.opencontainers.image.version"="4.6.0-rc1"
+  "org.opencontainers.image.source"="https://github.com/NovaMap-Health/engine-docker" \
+  "org.opencontainers.image.title"="Eclipse Open Integration Engine - NovaMap Edition" \
+  "org.opencontainers.image.url"="https://github.com/NovaMap-Health/engine" \
+  "org.opencontainers.image.vendor"="NovaMap Health" \
+  "org.opencontainers.image.version"="4.7.0.1-rc1"
 
 COPY --from=downloader --chown=1000:1000 /opt/engine /opt/engine
 
@@ -101,15 +101,15 @@ FROM eclipse-temurin:21.0.11_10-jre-alpine AS alpine-jre
 ARG CREATED_AT
 
 LABEL \
-  "org.opencontainers.image.authors"="BrightCodeCompany OÜ" \
+  "org.opencontainers.image.authors"="NovaMap Health" \
   "org.opencontainers.image.created"="${CREATED_AT?:}" \
-  "org.opencontainers.image.description"="An open source fork of the now closed-source Mirth Connect" \
+  "org.opencontainers.image.description"="An open source fork of the now closed-source Mirth Connect." \
   "org.opencontainers.image.licenses"="MPL-2.0" \
-  "org.opencontainers.image.source"="https://github.com/brightcodecompany/engine-docker" \
-  "org.opencontainers.image.title"="Open Integration Engine" \
-  "org.opencontainers.image.url"="https://github.com/OpenIntegrationEngine/engine" \
-  "org.opencontainers.image.vendor"="BrightCodeCompany OÜ" \
-  "org.opencontainers.image.version"="4.6.0-rc1"
+  "org.opencontainers.image.source"="https://github.com/NovaMap-Health/engine-docker" \
+  "org.opencontainers.image.title"="Eclipse Open Integration Engine - NovaMap Edition" \
+  "org.opencontainers.image.url"="https://github.com/NovaMap-Health/engine" \
+  "org.opencontainers.image.vendor"="NovaMap Health" \
+  "org.opencontainers.image.version"="4.7.0.1-rc1"
 
 COPY --from=downloader --chown=1000:1000 /opt/engine /opt/engine
 
@@ -131,15 +131,15 @@ FROM eclipse-temurin:21.0.11_10-jdk-alpine AS alpine-jdk
 ARG CREATED_AT
 
 LABEL \
-  "org.opencontainers.image.authors"="BrightCodeCompany OÜ" \
+  "org.opencontainers.image.authors"="NovaMap Health" \
   "org.opencontainers.image.created"="${CREATED_AT?:}" \
-  "org.opencontainers.image.description"="An open source fork of the now closed-source Mirth Connect" \
+  "org.opencontainers.image.description"="An open source fork of the now closed-source Mirth Connect." \
   "org.opencontainers.image.licenses"="MPL-2.0" \
-  "org.opencontainers.image.source"="https://github.com/brightcodecompany/engine-docker" \
-  "org.opencontainers.image.title"="Open Integration Engine" \
-  "org.opencontainers.image.url"="https://github.com/OpenIntegrationEngine/engine" \
-  "org.opencontainers.image.vendor"="BrightCodeCompany OÜ" \
-  "org.opencontainers.image.version"="4.6.0-rc1"
+  "org.opencontainers.image.source"="https://github.com/NovaMap-Health/engine-docker" \
+  "org.opencontainers.image.title"="Eclipse Open Integration Engine - NovaMap Edition" \
+  "org.opencontainers.image.url"="https://github.com/NovaMap-Health/engine" \
+  "org.opencontainers.image.vendor"="NovaMap Health" \
+  "org.opencontainers.image.version"="4.7.0.1-rc1"
 
 COPY --from=downloader --chown=1000:1000 /opt/engine /opt/engine
 

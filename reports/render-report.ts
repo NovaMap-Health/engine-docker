@@ -87,7 +87,7 @@ ${cveStrings.join('\n')}
 const args = process.argv.slice(2)
 console.log(args)
 
-const imageTag = `brightcodecompany/openintegrationengine:${args[0]}`
+const imageTag = `ghcr.io/novamap-health/engine:${args[0]}`
 const imageDigest = args[1]
 const startInstant = Temporal.Instant.from(args[2])
 

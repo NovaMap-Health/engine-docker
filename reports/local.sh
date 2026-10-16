@@ -4,8 +4,8 @@
 # SPDX-FileCopyrightText: 2026 BrightCodeCompany OÜ
 #
 
-imageRepo=brightcodecompany/openintegrationengine
-imageTag=4.6.0-rc1-alpine-jre
+imageRepo=ghcr.io/novamap-health/engine
+imageTag=4.6.0-alpine-jre
 
 digest=$(docker buildx imagetools inspect "$imageRepo:$imageTag" --raw \
   | jq -r '.manifests[] | select(.platform.os == "linux" and .platform.architecture == "amd64") | .digest')

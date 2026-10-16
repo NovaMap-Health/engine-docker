@@ -27,12 +27,12 @@
 
 - 🌐 **Website**: [openintegrationengine.org](https://openintegrationengine.org)
 - 💬 **Discord**: [Join our server](https://discord.gg/azdehW2Zrx)
-- 📂 **GitHub Repo**: [OpenIntegrationEngine/engine](https://github.com/OpenIntegrationEngine/engine)
+- 📂 **GitHub Repo**: [NovaMap-Health/engine](https://github.com/NovaMap-Health/engine)
 
 #### How to file issues:
 
 Issues regarding the Open Integration Engine software are tracked on the [Open Integration Engine GitHub repository](https://github.com/OpenIntegrationEngine/engine/issues),
-whereas issues regarding the Docker images are tracked on the [BrightCodeCompany GitHub repository](https://github.com/BrightCodeCompany/engine-docker).
+whereas issues regarding the Docker images are tracked on the [NovaMap-Health GitHub repository](https://github.com/NovaMap-Health/engine-docker).
 
 Please do your best to include the following information in your issue:
 * The exact commit hash of the code you are using
@@ -44,7 +44,7 @@ you're including code snippets or command output. This will make it easier for u
 ------------
 
 <a name="what-is-oie"></a>
-# What is Open Integration Engine [↑](#top)
+# What is Eclipse Open Integration Engine [↑](#top)
 
 An open-source message integration engine focused on healthcare. For more information, please visit
 [openintegrationengine.org](https://openintegrationengine.org).
@@ -64,17 +64,13 @@ managing interfaces, along with powerful features for real-time monitoring and a
 
 All Open Integration Engine releases are packaged into the following images:
 
+### Version 4.7.0.1-rc1
+- **Alpine**: `4.7.0.1-rc1-alpine-jre`, `4.7.0.1-rc1-alpine-jdk`
+- **Ubuntu**: `4.7.0.1-rc1-ubuntu-jre`, `4.7.0.1-rc1-ubuntu-jdk`
+
 ### Version 4.6.0 _(latest)_
 - **Alpine**: `4.6.0-alpine-jre`, `4.6.0-alpine-jdk`
 - **Ubuntu**: `4.6.0-ubuntu-jre`, `4.6.0-ubuntu-jdk`
-
-### Version 4.6.0-rc1
-- **Alpine**: `4.6.0-rc1-alpine-jre`, `4.6.0-rc1-alpine-jdk`
-- **Ubuntu**: `4.6.0-rc1-ubuntu-jre`, `4.6.0-rc1-ubuntu-jdk`
-
-### Version 4.5.2
-- **Alpine**: `4.5.2-alpine-jre`, `4.5.2-alpine-jdk`
-- **Ubuntu**: `4.5.2-ubuntu-jre`, `4.5.2-ubuntu-jdk`
 
 ---
 ### Floating Tags
@@ -95,10 +91,10 @@ All Open Integration Engine releases are packaged into the following images:
 <a name="supported-architectures"></a>
 # Supported Architectures [↑](#top)
 
-Docker images for OIE 4.5.2 and later versions support both `linux/amd64` and `linux/arm64` architectures. As an
+Docker images for OIE 4.6.0 and later versions support both `linux/amd64` and `linux/arm64` architectures. As an
 example, to pull the latest `linux/arm64` image, use the command
 ```
-docker pull --platform linux/arm64 brightcodecompany/openintegrationengine:latest
+docker pull --platform linux/arm64 ghcr.io/novamap-health/engine:latest
 ```
 
 ------------
@@ -113,26 +109,26 @@ Quickly start OpenIntegrationEngine using embedded Derby database and all config
 likely want to use the `-p` option to expose the 8443 port so that you can log in with the Administrator GUI or CLI:
 
 ```bash
-docker run -p 8443:8443 brightcodecompany/openintegrationengine
+docker run -p 8443:8443 ghcr.io/novamap-health/engine
 ```
 
 You can also use the `--name` option to give your container a unique name, and the `-d` option to detach the container
 and run it in the background:
 
 ```bash
-docker run --name myengine -d -p 8443:8443 brightcodecompany/openintegrationengine
+docker run --name myengine -d -p 8443:8443 ghcr.io/novamap-health/engine
 ```
 
 To run a different base image, specify a tag at the end:
 
 ```bash
-docker run --name myengine -d -p 8443:8443 brightcodecompany/openintegrationengine:latest-alpine-jdk
+docker run --name myengine -d -p 8443:8443 ghcr.io/novamap-health/engine:latest-alpine-jdk
 ```
 
 To run using a specific architecture, specify it using the `--platform` argument:
 
 ```bash
-docker run --name myengine -d -p 8443:8443 --platform linux/arm64 brightcodecompany/openintegrationengine
+docker run --name myengine -d -p 8443:8443 --platform linux/arm64 ghcr.io/novamap-health/engine
 ```
 
 Look at the [Environment Variables](#environment-variables) section for more available configuration options.
@@ -154,7 +150,7 @@ Here's an example `stack.yml` file you can use:
 ```yaml
 services:
   engine:
-    image: brightcodecompany/openintegrationengine
+    image: ghcr.io/novamap-health/engine
     environment:
       - DATABASE=postgres
       - DATABASE_URL=jdbc:postgresql://db:5432/enginedb
@@ -195,7 +191,7 @@ file or to add custom JVM options.
 To set environment variables, use the `-e` option for each variable on the command line:
 
 ```bash
-docker run -e DATABASE='derby' -p 8443:8443 brightcodecompany/openintegrationengine
+docker run -e DATABASE='derby' -p 8443:8443 ghcr.io/novamap-health/engine
 ```
 
 You can also use a separate file containing all of your environment variables using the `--env-file` option. For example,
@@ -214,7 +210,7 @@ VMOPTIONS=-Xmx512m
 ```
 
 ```bash
-docker run --env-file=myenvfile.txt -p 8443:8443 brightcodecompany/openintegrationengine
+docker run --env-file=myenvfile.txt -p 8443:8443 ghcr.io/novamap-health/engine
 ```
 
 ------------
@@ -395,7 +391,7 @@ Then in your `compose.yaml`:
 ```yaml
 services:
   engine:
-    image: brightcodecompany/openintegrationengine
+    image: ghcr.io/novamap-health/engine
     environment:
       - VMOPTIONS=-Xmx512m
     secrets:
@@ -429,7 +425,7 @@ Engine as part of a stack/swarm, it's possible the container filesystem is alrea
 want to consider mounting a **volume** to preserve the appdata folder.
 
 ```bash
-docker run -v /local/path/to/appdata:/opt/engine/appdata -p 8443:8443 brightcodecompany/openintegrationengine
+docker run -v /local/path/to/appdata:/opt/engine/appdata -p 8443:8443 ghcr.io/novamap-health/engine
 ```
 
 The `-v` option makes a local directory from your filesystem available to the Docker container. Create a folder on your
@@ -440,7 +436,7 @@ You can also configure volumes as part of your `compose.yaml`:
 ```yaml
 services:
   engine:
-    image: brightcodecompany/openintegrationengine
+    image: ghcr.io/novamap-health/engine
     volumes:
       - ~/Documents/appdata:/opt/engine/appdata
 ```
@@ -455,7 +451,7 @@ unzip them into the extensions folder before Engine starts up. So to launch Engi
 included in the base application, do this:
 
 ```bash
-docker run -v /path/to/custom-extensions:/opt/engine/custom-extensions -p 8443:8443 brightcodecompany/openintegrationengine:latest-ubuntu-jre
+docker run -v /path/to/custom-extensions:/opt/engine/custom-extensions -p 8443:8443 ghcr.io/novamap-health/engine:latest-ubuntu-jre
 ```
 
 Create a folder in your local filesystem containing the ZIP files for your additional extensions. Then change the
