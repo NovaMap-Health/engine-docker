@@ -1,5 +1,5 @@
 # Specifies which slug should gain the "latest" tags
-latest: 4.6.0
+latest: 4.7.0.1
 
 # Sets the alpine image tag for the downloader stage
 downloaderTag: 3.24.1
@@ -20,9 +20,9 @@ labels: |-
   "org.opencontainers.image.version"="{{ .slug }}"
 
 versions:
-  - slug: 4.7.0.1-rc1
-    releaseVersion: 4.7.0.1-rc1
-    releaseUrl: https://github.com/NovaMap-Health/engine/releases/download/v4.7.0.1-rc1/oie-nova_unix_4_7_0_1-rc1.tar.gz
+  - slug: 4.7.0.1
+    releaseVersion: 4.7.0.1
+    releaseUrl: https://github.com/NovaMap-Health/engine/releases/download/v4.7.0.1/oie-nova_unix_4_7_0_1.tar.gz
     tags:
       - distro: ubuntu
         type: jre

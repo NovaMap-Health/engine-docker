@@ -18,7 +18,7 @@ RUN apk add --no-cache curl \
       -o /opt/engine.tar.gz \
       -H "Accept: application/vnd.github+json" \
       -H "X-GitHub-Api-Version: 2022-11-28" \
-       https://github.com/NovaMap-Health/engine/releases/download/v4.7.0.1-rc1/oie-nova_unix_4_7_0_1-rc1.tar.gz \
+       https://github.com/NovaMap-Health/engine/releases/download/v4.7.0.1/oie-nova_unix_4_7_0_1.tar.gz \
     && tar xzf engine.tar.gz \
     && mv /opt/oie-nova /opt/engine \
     && mkdir -p /opt/engine/appdata
@@ -41,7 +41,7 @@ LABEL \
   "org.opencontainers.image.title"="Eclipse Open Integration Engine - NovaMap Edition" \
   "org.opencontainers.image.url"="https://github.com/NovaMap-Health/engine" \
   "org.opencontainers.image.vendor"="NovaMap Health" \
-  "org.opencontainers.image.version"="4.7.0.1-rc1"
+  "org.opencontainers.image.version"="4.7.0.1"
 
 COPY --from=downloader --chown=1000:1000 /opt/engine /opt/engine
 
@@ -75,7 +75,7 @@ LABEL \
   "org.opencontainers.image.title"="Eclipse Open Integration Engine - NovaMap Edition" \
   "org.opencontainers.image.url"="https://github.com/NovaMap-Health/engine" \
   "org.opencontainers.image.vendor"="NovaMap Health" \
-  "org.opencontainers.image.version"="4.7.0.1-rc1"
+  "org.opencontainers.image.version"="4.7.0.1"
 
 COPY --from=downloader --chown=1000:1000 /opt/engine /opt/engine
 
@@ -109,7 +109,7 @@ LABEL \
   "org.opencontainers.image.title"="Eclipse Open Integration Engine - NovaMap Edition" \
   "org.opencontainers.image.url"="https://github.com/NovaMap-Health/engine" \
   "org.opencontainers.image.vendor"="NovaMap Health" \
-  "org.opencontainers.image.version"="4.7.0.1-rc1"
+  "org.opencontainers.image.version"="4.7.0.1"
 
 COPY --from=downloader --chown=1000:1000 /opt/engine /opt/engine
 
@@ -139,7 +139,7 @@ LABEL \
   "org.opencontainers.image.title"="Eclipse Open Integration Engine - NovaMap Edition" \
   "org.opencontainers.image.url"="https://github.com/NovaMap-Health/engine" \
   "org.opencontainers.image.vendor"="NovaMap Health" \
-  "org.opencontainers.image.version"="4.7.0.1-rc1"
+  "org.opencontainers.image.version"="4.7.0.1"
 
 COPY --from=downloader --chown=1000:1000 /opt/engine /opt/engine
 
