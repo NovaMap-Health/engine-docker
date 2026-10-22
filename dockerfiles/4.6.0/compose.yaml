@@ -18,8 +18,6 @@ services:
         tags:
           - ghcr.io/novamap-health/engine:4.6.0-ubuntu
           - ghcr.io/novamap-health/engine:4.6.0-ubuntu-jre
-          - ghcr.io/novamap-health/engine:latest-ubuntu-jre
-          - ghcr.io/novamap-health/engine:latest-ubuntu
   
     ubuntu-jdk:
       image: ghcr.io/novamap-health/engine
@@ -32,7 +30,6 @@ services:
         tags:
           - ghcr.io/novamap-health/engine:4.6.0-ubuntu
           - ghcr.io/novamap-health/engine:4.6.0-ubuntu-jdk
-          - ghcr.io/novamap-health/engine:latest-ubuntu-jdk
   
     alpine-jre:
       image: ghcr.io/novamap-health/engine
@@ -45,9 +42,6 @@ services:
         tags:
           - ghcr.io/novamap-health/engine:4.6.0-alpine
           - ghcr.io/novamap-health/engine:4.6.0-alpine-jre
-          - ghcr.io/novamap-health/engine:latest-alpine-jre
-          - ghcr.io/novamap-health/engine:latest-alpine
-          - ghcr.io/novamap-health/engine:latest
   
     alpine-jdk:
       image: ghcr.io/novamap-health/engine
@@ -60,4 +54,3 @@ services:
         tags:
           - ghcr.io/novamap-health/engine:4.6.0-alpine
           - ghcr.io/novamap-health/engine:4.6.0-alpine-jdk
-          - ghcr.io/novamap-health/engine:latest-alpine-jdk

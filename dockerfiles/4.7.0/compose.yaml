@@ -1,0 +1,63 @@
+################################################################
+#                                                              #
+#  WARNING: THIS FILE IS AUTO-GENERATED. DO NOT EDIT MANUALLY  #
+#                                                              #
+################################################################
+
+name: open-integration-engine-novamap
+
+services:
+    ubuntu-jre:
+      image: ghcr.io/novamap-health/engine
+      build:
+        target: ubuntu-jre
+        context: .
+        platforms:
+          - linux/amd64
+          - linux/arm64
+        tags:
+          - ghcr.io/novamap-health/engine:4.7.0-ubuntu
+          - ghcr.io/novamap-health/engine:4.7.0-ubuntu-jre
+          - ghcr.io/novamap-health/engine:latest-ubuntu-jre
+          - ghcr.io/novamap-health/engine:latest-ubuntu
+  
+    ubuntu-jdk:
+      image: ghcr.io/novamap-health/engine
+      build:
+        target: ubuntu-jdk
+        context: .
+        platforms:
+          - linux/amd64
+          - linux/arm64
+        tags:
+          - ghcr.io/novamap-health/engine:4.7.0-ubuntu
+          - ghcr.io/novamap-health/engine:4.7.0-ubuntu-jdk
+          - ghcr.io/novamap-health/engine:latest-ubuntu-jdk
+  
+    alpine-jre:
+      image: ghcr.io/novamap-health/engine
+      build:
+        target: alpine-jre
+        context: .
+        platforms:
+          - linux/amd64
+          - linux/arm64
+        tags:
+          - ghcr.io/novamap-health/engine:4.7.0-alpine
+          - ghcr.io/novamap-health/engine:4.7.0-alpine-jre
+          - ghcr.io/novamap-health/engine:latest-alpine-jre
+          - ghcr.io/novamap-health/engine:latest-alpine
+          - ghcr.io/novamap-health/engine:latest
+  
+    alpine-jdk:
+      image: ghcr.io/novamap-health/engine
+      build:
+        target: alpine-jdk
+        context: .
+        platforms:
+          - linux/amd64
+          - linux/arm64
+        tags:
+          - ghcr.io/novamap-health/engine:4.7.0-alpine
+          - ghcr.io/novamap-health/engine:4.7.0-alpine-jdk
+          - ghcr.io/novamap-health/engine:latest-alpine-jdk
