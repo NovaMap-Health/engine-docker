@@ -8,7 +8,7 @@ name: open-integration-engine-novamap
 
 services:
     ubuntu-jre:
-      image: ghcr.io/novamap-health/engine
+      image: ghcr.io/novamap-health/engine:4.6.0-ubuntu-jre
       build:
         target: ubuntu-jre
         context: .
@@ -16,11 +16,11 @@ services:
           - linux/amd64
           - linux/arm64
         tags:
-          - ghcr.io/novamap-health/engine:4.6.0-ubuntu
           - ghcr.io/novamap-health/engine:4.6.0-ubuntu-jre
+          - ghcr.io/novamap-health/engine:4.6.0-ubuntu
   
     ubuntu-jdk:
-      image: ghcr.io/novamap-health/engine
+      image: ghcr.io/novamap-health/engine:4.6.0-ubuntu-jdk
       build:
         target: ubuntu-jdk
         context: .
@@ -28,11 +28,10 @@ services:
           - linux/amd64
           - linux/arm64
         tags:
-          - ghcr.io/novamap-health/engine:4.6.0-ubuntu
           - ghcr.io/novamap-health/engine:4.6.0-ubuntu-jdk
   
     alpine-jre:
-      image: ghcr.io/novamap-health/engine
+      image: ghcr.io/novamap-health/engine:4.6.0-alpine-jre
       build:
         target: alpine-jre
         context: .
@@ -40,11 +39,11 @@ services:
           - linux/amd64
           - linux/arm64
         tags:
-          - ghcr.io/novamap-health/engine:4.6.0-alpine
           - ghcr.io/novamap-health/engine:4.6.0-alpine-jre
+          - ghcr.io/novamap-health/engine:4.6.0-alpine
   
     alpine-jdk:
-      image: ghcr.io/novamap-health/engine
+      image: ghcr.io/novamap-health/engine:4.6.0-alpine-jdk
       build:
         target: alpine-jdk
         context: .
@@ -52,5 +51,4 @@ services:
           - linux/amd64
           - linux/arm64
         tags:
-          - ghcr.io/novamap-health/engine:4.6.0-alpine
           - ghcr.io/novamap-health/engine:4.6.0-alpine-jdk

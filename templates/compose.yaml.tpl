@@ -23,7 +23,8 @@ name: open-integration-engine-novamap
 services:
   {{- range .version.tags }}
     {{ print .distro "-" .type ":" }}
-      image: ghcr.io/novamap-health/engine
+      {{/* Pin image to a versioned tag so Compose does not imply :latest on push */}}
+      image: ghcr.io/novamap-health/engine:{{ $slug }}-{{ .distro }}-{{ .type }}
       build:
         target: {{ .distro }}-{{ .type }}
         context: .
@@ -31,8 +32,10 @@ services:
           - linux/amd64
           - linux/arm64
         tags:
-          - ghcr.io/novamap-health/engine:{{ $slug }}-{{ .distro }}
           - ghcr.io/novamap-health/engine:{{ $slug }}-{{ .distro }}-{{ .type }}
+          {{- if eq .type "jre" }}
+          - ghcr.io/novamap-health/engine:{{ $slug }}-{{ .distro }}
+          {{- end }}
           {{- if eq $slug $.latest }}
           - ghcr.io/novamap-health/engine:latest-{{ .distro }}-{{ .type }}
             {{- if eq .type "jre" }}
