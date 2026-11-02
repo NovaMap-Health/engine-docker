@@ -64,7 +64,11 @@ managing interfaces, along with powerful features for real-time monitoring and a
 
 All Open Integration Engine releases are packaged into the following images:
 
-### Version 4.7.0.1 _(latest)_
+### Version 4.7.0.3 _(latest)_
+- **Alpine**: `4.7.0.3-alpine-jre`, `4.7.0.3-alpine-jdk`
+- **Ubuntu**: `4.7.0.3-ubuntu-jre`, `4.7.0.3-ubuntu-jdk`
+
+### Version 4.7.0.1
 - **Alpine**: `4.7.0.1-alpine-jre`, `4.7.0.1-alpine-jdk`
 - **Ubuntu**: `4.7.0.1-ubuntu-jre`, `4.7.0.1-ubuntu-jdk`
 
@@ -80,15 +84,15 @@ All Open Integration Engine releases are packaged into the following images:
 ### Floating Tags
 
 - **Default**:
-    - `latest` → `4.7.0.1-alpine-jre`
+    - `latest` → `4.7.0.3-alpine-jre`
 - **Distro Only**:
-    - `latest-alpine` → `4.7.0.1-alpine-jre`
-    - `latest-ubuntu` → `4.7.0.1-ubuntu-jre`
+    - `latest-alpine` → `4.7.0.3-alpine-jre`
+    - `latest-ubuntu` → `4.7.0.3-ubuntu-jre`
 - **Distro + JVM**:
-    - `latest-alpine-jre` → `4.7.0.1-alpine-jre`
-    - `latest-alpine-jdk` → `4.7.0.1-alpine-jdk`
-    - `latest-ubuntu-jre` → `4.7.0.1-ubuntu-jre`
-    - `latest-ubuntu-jdk` → `4.7.0.1-ubuntu-jdk`
+    - `latest-alpine-jre` → `4.7.0.3-alpine-jre`
+    - `latest-alpine-jdk` → `4.7.0.3-alpine-jdk`
+    - `latest-ubuntu-jre` → `4.7.0.3-ubuntu-jre`
+    - `latest-ubuntu-jdk` → `4.7.0.3-ubuntu-jdk`
 
 ------------
 
