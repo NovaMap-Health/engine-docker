@@ -18,16 +18,16 @@ RUN apk add --no-cache curl \
       -o /opt/engine.tar.gz \
       -H "Accept: application/vnd.github+json" \
       -H "X-GitHub-Api-Version: 2022-11-28" \
-       https://github.com/NovaMap-Health/engine/releases/download/v4.7.0.3/oie-nova_unix_4_7_0_3.tar.gz \
+       https://github.com/NovaMap-Health/engine/releases/download/v4.7.0.3/oie_unix_4_7_0_3.tar.gz \
     && tar xzf engine.tar.gz \
-    && mv /opt/oie-nova /opt/engine \
+    && mv /opt/oie /opt/engine \
     && mkdir -p /opt/engine/appdata
 
 WORKDIR /opt/engine
 COPY --chmod=755 entrypoint.sh /opt/engine/entrypoint.sh
 
 RUN rm -rf cli-lib manager-lib \
-    && rm mirth-cli-launcher.jar oie-novacommand
+    && rm mirth-cli-launcher.jar oiecommand
 FROM eclipse-temurin:21.0.12_1-jre-resolute AS ubuntu-jre
 
 ARG CREATED_AT
@@ -60,7 +60,7 @@ EXPOSE 8443
 USER engine
 
 ENTRYPOINT ["./entrypoint.sh"]
-CMD ["./oie-novaserver"]
+CMD ["./oieserver"]
 
 FROM eclipse-temurin:21.0.12_1-jdk-resolute AS ubuntu-jdk
 
@@ -94,7 +94,7 @@ EXPOSE 8443
 USER engine
 
 ENTRYPOINT ["./entrypoint.sh"]
-CMD ["./oie-novaserver"]
+CMD ["./oieserver"]
 
 FROM eclipse-temurin:21.0.12_1-jre-alpine AS alpine-jre
 
@@ -124,7 +124,7 @@ EXPOSE 8443
 USER engine
 
 ENTRYPOINT ["./entrypoint.sh"]
-CMD ["./oie-novaserver"]
+CMD ["./oieserver"]
 
 FROM eclipse-temurin:21.0.12_1-jdk-alpine AS alpine-jdk
 
@@ -154,4 +154,4 @@ EXPOSE 8443
 USER engine
 
 ENTRYPOINT ["./entrypoint.sh"]
-CMD ["./oie-novaserver"]
+CMD ["./oieserver"]

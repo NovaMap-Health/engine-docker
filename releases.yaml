@@ -36,20 +36,3 @@ versions:
       - distro: alpine
         type: jdk
         tag: 21.0.12_1-jdk-alpine
-
-  - slug: 4.7.0.1
-    releaseVersion: 4.7.0.1
-    releaseUrl: https://github.com/NovaMap-Health/engine/releases/download/v4.7.0.1/oie-nova_unix_4_7_0_1.tar.gz
-    tags:
-      - distro: ubuntu
-        type: jre
-        tag: 21.0.12_1-jre-resolute
-      - distro: ubuntu
-        type: jdk
-        tag: 21.0.12_1-jdk-resolute
-      - distro: alpine
-        type: jre
-        tag: 21.0.12_1-jre-alpine
-      - distro: alpine
-        type: jdk
-        tag: 21.0.12_1-jdk-alpine

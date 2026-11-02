@@ -35,14 +35,14 @@ RUN apk add --no-cache curl \
       -H "X-GitHub-Api-Version: 2022-11-28" \
        {{ .version.releaseUrl }} \
     && tar xzf engine.tar.gz \
-    && mv /opt/oie-nova /opt/engine \
+    && mv /opt/oie /opt/engine \
     && mkdir -p /opt/engine/appdata
 
 WORKDIR /opt/engine
 COPY --chmod=755 entrypoint.sh /opt/engine/entrypoint.sh
 
 RUN rm -rf cli-lib manager-lib \
-    && rm mirth-cli-launcher.jar oie-novacommand
+    && rm mirth-cli-launcher.jar oiecommand
 
 {{- /* Assign current version slug into a variable to carry it into the tags iteration */}}
 {{- $slug := dict "slug" .version.slug -}}
@@ -77,7 +77,7 @@ EXPOSE 8443
 USER engine
 
 ENTRYPOINT ["./entrypoint.sh"]
-CMD ["./oie-novaserver"]
+CMD ["./oieserver"]
 {{ end -}}
 
 {{ end }}
